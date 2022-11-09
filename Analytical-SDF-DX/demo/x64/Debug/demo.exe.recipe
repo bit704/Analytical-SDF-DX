@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\demo.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_PS0.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_PS1.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_VS.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

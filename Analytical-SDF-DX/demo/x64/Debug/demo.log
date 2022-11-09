@@ -1,0 +1,57 @@
+﻿  compilation object save succeeded; see D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_PS0.cso
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Calculate.hlsli(130,15-34): warning X3206: implicit truncation of vector type
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_PS1.hlsl(64,15-35): warning X3206: implicit truncation of vector type
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+  compilation object save succeeded; see D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_PS1.cso
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(89,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(91,30): warning X4000: use of potentially uninitialized variable (q)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(87,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\SDF.hlsli(85,18): warning X4000: use of potentially uninitialized variable (sdOctahedron)
+  
+  compilation object save succeeded; see D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\HLSL\Plane_VS.cso
+  CpuTimer.cpp
+  d3dApp.cpp
+  d3dUtil.cpp
+  DDSTextureLoader11.cpp
+  DXTrace.cpp
+  SDFRenderer.cpp
+  Main.cpp
+  WICTextureLoader11.cpp
+  正在生成代码...
+    正在创建库 D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\demo.lib 和对象 D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\demo.exp
+  demo.vcxproj -> D:\code\Hub\Analytical-SDF-DX\Analytical-SDF-DX\demo\demo.exe
