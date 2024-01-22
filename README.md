@@ -6,7 +6,7 @@
 
 计算机图形学中几何的表示形式分为显式和隐式，SDF<sup><a class=n href="#ref1">[1]</a></sup> 是一种隐式几何表示形式，全称为符号距离场（Signed Distance Function）。SDF表示为函数f(p)，将每个点的位置映射为一个标量，其记录自己与距离自己最近物体之间的距离。若为0，表示该点位于物体边界上；若为正，在物体外；若为负，在物体内。只要定义好距离计算方式，SDF理论上可以扩展到任意维度。
 
-![2D-SDF示例](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-2D-SDF-example.png)
+![2D-SDF示例](./pic/2022-11-09-2D-SDF-example.png)
 
 
 
@@ -16,7 +16,7 @@
 
 UE5里默认使用混合软光追，优先使用Hierarchy Z Buffer在屏幕空间追踪，如果光线被挡住或者射出屏幕外，则使用SDF在世界空间追踪。引擎会离线生成物体的网格模型对应的SDF，在SDF追踪过程中，默认在2米内追踪网格SDF（每个物体拥有一个），对于远处将整个场景合并生成全局SDF进行追踪（也可以设置直接追踪全局SDF）。
 
-![混合软光追](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-10-21-hybird-tracing-pipeline.png)
+![混合软光追](./pic/2022-10-21-hybird-tracing-pipeline.png)
 
 
 
@@ -32,11 +32,11 @@ SDF可以用两种不同的表达形式，数值形式和解析形式。前者�
 
 应用在引擎（比如UE）中的SDF大多是数值形式的SDF，以体素采样空间的形式存储以供查询。当物体过薄以至于厚度小于体素的时候，就会出现错误，因此数值SDF追踪的精度不如三角面片求交追踪；并且数值SDF的压缩/近似和加速生成是两大难题，UE5重写了UE4的距离场，实现了极大的性能提升，依然无法实时生成，需要离线计算。
 
-![引擎中的距离场](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-SDF-in-UE.jpg)
+![引擎中的距离场](./pic/2022-11-09-SDF-in-UE.jpg)
 
 https://www.shadertoy.com上有很多关于解析SDF渲染的精美例子，使用GLSL在封装好的小框架上编写。该网站的创建者之一、西班牙程序员Inigo Quilez是这方面工作的主要贡献者。解析SDF无需预计算和存储空间，也无需在三角面片表示的网格模型的基础上生成，并且追踪起来精度很高。当然其缺点也很明显，想要表示任意复杂的形状需要的数学公式十分麻烦，当物体过多之后计算量也非常大，这限制了它的表达能力。
 
-![西班牙程序员iq的渲染demo](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-demo-of-iq.png)
+![西班牙程序员iq的渲染demo](./pic/2022-11-09-demo-of-iq.png)
 
 ### 1.4 工程意义
 
@@ -98,13 +98,13 @@ https://www.shadertoy.com上有很多关于解析SDF渲染的精美例子，使�
 
 本工程所用渲染管线如图：
 
-![渲染管线](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-09-18-beginner-pipeline.png)
+![渲染管线](./pic/2022-09-18-beginner-pipeline.png)
 
 整个渲染管线配置过程在SDFRenderer的InitPipeline()方法中进行，创建好渲染管线各个阶段所需的资源，绑定好渲染管线。
 
 第一步，创建顶点缓冲区和索引缓冲区。顶点数据有4个：P0、P1、P2、P3，包含位置坐标及纹理坐标。索引数据按以下索引顺序指向顶点：P0、P1、P3、P0、P3、P2，组成两个三角形面片。
 
-![顶点及索引数据](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-vertex-and-index.png)
+![顶点及索引数据](./pic/2022-11-09-vertex-and-index.png)
 
 第二步，创建常量缓冲区，以将时间、分辨率、帧数、相机矩阵、效果开关等变量的更新传入着色器。
 
@@ -223,7 +223,7 @@ https://www.shadertoy.com上有很多关于解析SDF渲染的精美例子，使�
 
 有了求场景中任意一点SDF的方法后，便可以开始光线行进，原理如图：
 
-![光线行进](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-ray-march.png)
+![光线行进](./pic/2022-11-09-ray-march.png)
 
 因为光线行进每一步的步长都是当前出发点的SDF值，所以可以保证下一步到达的点在物体外或在物体表面；且只要光线有相交物体，有限步数行进后一定会收敛在物体表面。计算时为了优化，需要设置起始行进距离、最大行进距离、终止条件。算法流程如下：
 
@@ -292,11 +292,11 @@ $$
 
 计算软阴影的原理是，将物体表面一点与光源连线，判断该路径与周围其它物体的最近距离d，对d与相应路径长度进行计算得到一个值域为的软阴影因子，0代表该路径被物体直接阻挡（硬阴影，d=0），1代表该路径离其它物体足够远（无阴影，d足够大）。通过将该点的光照着色乘软阴影因子，就可以得到该点的软阴影效果，其效果强弱由软阴影系数决定。
 
-![软阴影原理](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-soft-shadow-principle.jpg)
+![软阴影原理](./pic/2022-11-09-soft-shadow-principle.jpg)
 
 对于SDF而言，可以用利用光线行进来进行以上计算。从物体表面一点出发，一直行进到光源，在每个行进位置上求一次SDF值，记录该位置离其它物体最近距离，最后取最小值。但是这种算法可能会漏掉尖角区域，如图所示：
 
-![光线行进求软阴影](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-cal-soft-shadow.png)
+![光线行进求软阴影](./pic/2022-11-09-cal-soft-shadow.png)
 
 设光线行进第一次到达点A，第二次到达点B，在A处的SDF值为p1，在B处的SDF值为p2，在两点各以SDF值为圆心作圆，交于EF两点，EF与光线交于P点。如果仅以光线行进到达点的SDF值计算光线离其它物体最近距离，明显会漏掉点G 这种尖角区域，更好的方法是以PE长度作为光线离其它物体最近距离。
 
@@ -323,7 +323,7 @@ $$
 
 利用SDF的性质可以近似求解环境光遮蔽，从物体表面一点的法线方向出发按固定步长进行光线行进，每到一个位置利用该位置SDF和行进距离的关系更新环境光遮蔽因子。
 
-![环境光遮蔽原理](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-AO-principle.png)
+![环境光遮蔽原理](./pic/2022-11-09-AO-principle.png)
 
 如图3.6，以2D SDF为例，从P1法线方向开始以固定步长2进行光线行进，第一步行进到SDF为2的位置，第二步行进到SDF为4的位置，第三步行进到SDF为6的位置，SDF与行进距离成正比，说明完全没有遮蔽；从P2法线方向开始以固定步长2进行光线行进，行进三步都是到SDF为1的位置，说明遮蔽明显。
 
@@ -347,7 +347,7 @@ $$
 
 ## 4 结果展示与分析
 
-![软件界面](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-UI.png)
+![软件界面](./pic/2022-11-09-UI.png)
 
 软件界面如图所示，左上角是操作板，从上到下依次是：是否开启物体和光源动画、是否上基础色、是否开启方向光、是否开启天空光、是否开启环境光遮蔽、调整最大光线行进步数，调整软阴影系数。
 
@@ -355,27 +355,27 @@ $$
 
 仅保留光线行进，直接用每个像素相机射线的行进距离在0和1之间插值得到着色，可以近似得到深度图，0到1代表的是从近到远。
 
-![近似深度图](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-depth.png)
+![近似深度图](./pic/2022-11-09-depth.png)
 
 开启天空光和材质着色，可以看出物体，但缺乏立体感。
 
-![开启天空光和材质着色](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-shading.png)
+![开启天空光和材质着色](./pic/2022-11-09-shading.png)
 
 开启环境光遮蔽，明显立体感增强。
 
-![开启环境光遮蔽](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-AO.png)
+![开启环境光遮蔽](./pic/2022-11-09-AO.png)
 
 开启方向光和动画，很明显的高光。地上两个影子来自两个光源。
 
-![开启方向光和动画](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-animation.png)
+![开启方向光和动画](./pic/2022-11-09-animation.png)
 
 调小最大光线行进步数，可以看出物体的边缘无法正确着色，这是因为最大步数不足以让光线与物体边缘表面相交。
 
-![调小最大光线行进步数](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-max-steps.png)
+![调小最大光线行进步数](./pic/2022-11-09-max-steps.png)
 
 通过调节不同的软阴影系数，可以实现软阴影到硬阴影的过渡。
 
-![不同软阴影系数对比](https://bit704.oss-cn-beijing.aliyuncs.com/image/2022-11-09-soft-shadow-compare.png)
+![不同软阴影系数对比](./pic/2022-11-09-soft-shadow-compare.png)
 
 ## 5 总结与展望
 
