@@ -1,2 +1,0 @@
-D:\code\VSProjects\DX11Projects\DIY\MHN\ImGui\x64\Debug\ImGui.lib
-D:\PersonalFile\Course\计算机图形学技术及应用\图形学作业+3220220950+梅浩楠\SDF-DX\ImGui\x64\Debug\ImGui.lib
